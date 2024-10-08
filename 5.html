@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>241008</title>
+<style>
+   @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+   #q{
+        text-align: center;
+    }
+
+    .w{
+        color: red;
+    }
+    .e{
+        background-color: gray;
+    }
+    .r{
+        font-size:60px;
+        font-family: "Diphylleia", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: -10px;
+    }
+    table {
+				caption-side: bottom;  /* 표 캡션 위치 */
+				border:1px solid black;  /* 표 테두리는 검은 색 실선으로 */
+				border-collapse: collapse;  /* 테두리 한줄로 표시 */
+			}
+			td, th {
+				border:1px dotted black;  /* 셀 테두리는 검은 색 점선으로 */
+				padding:10px;  /* 셀 테두리와 내용 사이의 여백 */
+				text-align:center;  /* 셀 내용 가운데 정렬 */
+            }
+            * {
+      box-sizing: border-box;
+    }
+    nav ul {
+      list-style:none;      
+    }
+    nav ul li {
+      display:inline-block;      
+      padding:20px;
+      margin:0 20px;
+      border:1px solid #222;
+    }
+    #s{width:100px;
+      height:100px;
+      background-color:#222;
+      position:fixed;  /* 포지셔닝 - fixed */
+      right:30px;  /* 오른쪽에서 30px 떨어지게 */
+      bottom:30px;  /* 위쪽에서 30px 떨어지게 */
+      }
+      .d {
+      border-radius:50%;      
+      background: #f00; /* CSS3를 지원하지 않는 브라우저용 */
+  		background: linear-gradient(90deg, #d299c2,#fef9d7);
+    }
+    div {
+			width:100px;
+			height:100px;
+		}
+</style>
+</head>
+<body>
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+        <li><a href="4_login.html">logintest</a></li>
+        </ol>
+    <h1>5단원</h1>
+    <form>
+        <p>
+        <input type="button" value="로그인" onclick="window.open('4_login.html')">
+    </p>
+    </form>
+        <legend>개인 정보</legend>
+        <ul id="shipping">
+          <li>
+            <label for="user-name">이름 </label>
+            <input type="text" id="user-name">
+          </li>
+          <li>
+            <label for="addr">주소</label>
+            <input type="text" id="addr">
+          </li>
+          <li>
+            <label for="mail">이메일</label>
+            <input type="email" id="mail">
+          </li>        
+          <li>
+            <label for="phone">연락처</label>
+            <input type="tel" id="phone">
+          </li>
+          <li>
+            <label for="d-day">생년월일</label>
+            <input type="date" id="d-day">
+          </li>       
+          <li>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password">
+          </li> 
+          <li>
+            <label for="range">슬라이드 막대</label>
+            <input type="range" id="range" min="0" max="350">
+          </li> 
+        </ul>  
+
+        <h1 id="q">6단원</h1>
+        <p id="q"class="e">아이샵 중앙 정렬</p>
+        <p id="q" class="w">css 선택자 관련이라 이거말고 할게 없네요,,</p>
+
+    <h1>7단원</h1>
+        <p class="r">무려 글꼴의 등장</p>
+        <p style="text-decoration:line-through">글자가 너무커요</p><br>
+        <table>
+			<caption>그냥 만들어 본 표</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>1</th>
+					<th>2</t>
+					<th>3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="2">4</td>
+					<td>4</td>
+					<td>8</td>
+					<td>12</td>
+				</tr>
+			</tbody>        
+		</table>
+
+        <h1>8단원</h1>
+        <nav>
+            <ul>
+        <li>박스!</li>
+    </ul>
+    </nav>
+<img id="s"    src="elen.jpg">
+<br><br><br><br><br><br><br><br><br><br>
+<h1>9단원</h1>
+<div class="d"></div>
+</body>
+</html>
