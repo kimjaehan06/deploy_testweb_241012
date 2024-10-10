@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+			width:80px;
+			margin:50px auto;
+
+		}
+
+    .box{
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      animation: time 1.15s ease-out infinite, background 1.15s infinite  ;
+    }
+
+    .box1{
+        width: 100px;
+      height: 100px;
+      text-align: center;
+      animation: time 60s ease-out infinite, background 60s infinite ;
+    }
+
+    .box2{
+        width: 100px;
+      height: 100px;
+      text-align: center;
+      animation: time 3600s ease-out infinite, background 3600s infinite ;
+    }
+
+    .box4{
+        width: 100px;
+      height: 100px;
+      text-align: center;
+      animation: po1 2s ease-in-out infinite, background 2s infinite ;
+    }
+
+    .container2 {
+      width:700px;
+      display:flex; /* 플렉스 컨테이너 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    .box3 p{
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+      background-color:#222;  
+      color:#fff;
+      text-align: center; 
+    }
+    #opt1{
+      flex-direction: row;          
+    }
+    #opt2{
+      flex-direction: column;         
+    }   
+
+    #c {
+        text-align: center;
+    }
+
+    @keyframes time {
+        from {transform: translateX(-35px)
+        }
+        
+        70% {transform: translateX(-3px)}
+
+        to {
+            transform: translateX(0px)
+        }
+    }
+
+    @keyframes background {  
+      from { background-color: red; }
+      to { background-color: rgb(38, 0, 255); }
+    }
+
+    @keyframes po1 {
+        from {transform: translateX(-1000px)
+        }  
+        
+        to {
+            transform: translateX(0px)
+        }
+    }
+</style>
+<body>
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+        <li><a href="4_login.html">logintest</a></li>
+        <li><a href="5.html">241008</a></li>
+        <li><a href="6.html">241010</a></li>
+        </ol>
+    <p>11단원</p>
+    <p id="c">애니메이션</p>
+    <div id="container">
+		<div class="box">1초</div><br>
+        <div class="box1">1분</div><br>
+        <div class="box2">1시간</div><br>
+        <div class="box4"></div><br>
+	</div>
+    <p>12단원</p>
+    <p>플렉스 박스</p>
+    <div class="container2" id="opt1">
+        <div class="box3"><p>1</p></div>
+        <div class="box3"><p>2</p></div>
+        <div class="box3"><p>3</p></div>
+      </div>
+      <div class="container2" id="opt2">
+        <div class="box3"><p>1</p></div>
+        <div class="box3"><p>2</p></div>
+        <div class="box3"><p>3</p></div>
+        <div class="box3"><p>4</p></div>
+       </div>          
+</body>
+</html>  
