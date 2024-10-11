@@ -23,9 +23,14 @@ li {
     #result {
 	width:500px;
 	height:300px;
-	margin:30px auto;
-	border:2px solid #ccc;
-	border-radius:15px;
+	margin:10px auto;
+    
+}
+#description {	
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
 }
 
 </style>
@@ -38,18 +43,15 @@ li {
         <li class="c"><a href="#" onclick="changeImageAndText('img/3.jpg', '20억')">메로구이</a></li>
     </ul>
     
-    <div id="result"></div>
     <div id="description"></div>
+    <div id="result"></div>
+    
     
     <script>
         function changeImageAndText(imagePath, descriptionText) {
             var result = document.querySelector('#result');
             var description = document.querySelector('#description');
-            
-            // 이미지 변경
-            result.innerHTML = '<img src="' + imagePath + '" alt="Selected Image" style="width: 100%; height: auto;">';
-            
-            // 텍스트 변경
+            result.innerHTML = '<img src="' + imagePath + '" alt="Selected Image" style="width: 500px; height: auto;">';
             description.innerHTML = '<li>' + descriptionText + '</li>';
         }
     </script>
