@@ -58,48 +58,64 @@
             document.getElementById("randomImage").src = items[randomIndex].image;
         }
     </script>
-  <div id="container">
-    <p>먹고 싶은걸 메모해보자!</p>
-    <p>(먹기 싫어진건 클릭해서 지울 수 있다!)</p>
-    <form action="">
-      <input type="text" id="subject" autofocus>
-      <button onclick="newRegister(); return false;">메모하기</button>
-    </form>
-    <hr>  
-    <ul id="itemList"> </ul>  
-  </div>
-  <br><br><br><br>
-<ol>
-    <h6><a href="1.html">HTML</a></h6>
-        <h6><a href="2.html">CSS</a></h6>
-        <h6><a href="3.html">JavaScript</a></h6>
-        <h6><a href="4_login.html">logintest</a></h6>
-        <h6><a href="5.html">241008</a></h6>
-        <h6><a href="6.html">241010</a></h6>
-        <h6><a href="7.html">241011</a></h6>
-        <h6><a href="8.html">241014</a></h6>
-</ol>
-
-	<script>
-    function newRegister() {
-      var newItem = document.createElement("li");   
-      var subject = document.querySelector("#subject");  
-      var newText = document.createTextNode(subject.value);  
-      newItem.appendChild(newText);  
-
-      var itemList = document.querySelector("#itemList");  
-      itemList.insertBefore(newItem, itemList.childNodes[0]);  
-
-      subject.value="";
-
-      var items = document.querySelectorAll("li"); 
-      for(i=0; i<items.length; i++) {
-        items[i].addEventListener("click", function() {
-          if(this.parentNode)  
-            this.parentNode.removeChild(this);
+    <div id="container">
+      <p>먹고 싶은 메뉴를 메모해보자!</p>
+      <p>(먹고싶지 않아진 메뉴는 클릭하여 지울수있다)</p>
+      <form action="">
+        <input type="text" id="subject" autofocus>
+        <button onclick="newRegister(); return false;">추가</button>
+      </form>
+      <hr>  
+      <ul id="itemList"> </ul>  
+    </div>
+  
+    <script>
+      function newRegister() {
+        var newItem = document.createElement("li");  
+        var subject = document.querySelector("#subject");  
+  
+        if(subject.value === "") {
+          alert("내용을 입력하세요!");
+          return;
+        }
+  
+        var newText = document.createTextNode(subject.value);  
+        newItem.appendChild(newText);  
+  
+        var itemList = document.querySelector("#itemList");  
+        itemList.appendChild(newItem);  
+  
+        subject.value = "";  
+  
+        updateItemNumbers();  
+  
+      
+        newItem.addEventListener("click", function() {  
+          itemList.removeChild(newItem);  
+          updateItemNumbers();  
         });
       }
-    }
-	</script>
-</body>
-</html>
+  
+      
+      function updateItemNumbers() {
+        var items = document.querySelectorAll("li");  
+        for (var i = 0; i < items.length; i++) {
+          items[i].innerHTML = (i + 1) + ". " + items[i].textContent.replace(/^\d+\.\s/, ""); 
+        }
+      }
+    </script>
+
+<ol>
+  <h6><a href="1.html">HTML</a></h6>
+  <h6><a href="2.html">CSS</a></h6>
+  <h6><a href="3.html">JavaScript</a></h6>
+  <h6><a href="4_login.html">logintest</a></h6>
+  <h6><a href="5.html">241008</a></h6>
+  <h6><a href="6.html">241010</a></h6>
+  <h6><a href="7.html">241011</a></h6>
+  <h6><a href="8.html">241014</a></h6>
+  </ol>
+
+  
+  </body>
+  </html>
