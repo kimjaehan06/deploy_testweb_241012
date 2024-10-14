@@ -1,0 +1,94 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 점심 추천</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #randomImage {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+            margin-top: 20px;
+        }
+
+
+        li {
+            font-size:24px;
+        font-family: "Diphylleia", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-bottom: -10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>랜덤 점심 추천</h1>
+    <p id="randomText">-</p>
+    <img id="randomImage" src="img/4.PNG" alt="랜덤 이미지">
+    <br><br>
+    <button onclick="generateRandom()">오늘 뭐먹지 </button>
+    <br><br><br><br>
+    <script>
+        const items = [
+            {
+                text: "규카츠 / 15,000원",
+                image: "img/1.jpg"
+            },
+            {
+                text: "크림파스타 / 12,000원",
+                image: "img/2.jpg"
+            },
+            {
+                text: "메로구이 / 20억",
+                image: "img/3.jpg"
+            },
+        ];
+
+        function generateRandom() {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            document.getElementById("randomText").innerText = items[randomIndex].text;
+            document.getElementById("randomImage").src = items[randomIndex].image;
+        }
+    </script>
+  <div id="container">
+    <p>먹고 싶은걸 메모해보자!</p>
+    <p>(먹기 싫어진건 클릭해서 지울 수 있다!)</p>
+    <form action="">
+      <input type="text" id="subject" autofocus>
+      <button onclick="newRegister(); return false;">메모하기</button>
+    </form>
+    <hr>  
+    <ul id="itemList"> </ul>  
+  </div>
+
+	<script>
+    function newRegister() {
+      var newItem = document.createElement("li");   
+      var subject = document.querySelector("#subject");  
+      var newText = document.createTextNode(subject.value);  
+      newItem.appendChild(newText);  
+
+      var itemList = document.querySelector("#itemList");  
+      itemList.insertBefore(newItem, itemList.childNodes[0]);  
+
+      subject.value="";
+
+      var items = document.querySelectorAll("li"); 
+      for(i=0; i<items.length; i++) {
+        items[i].addEventListener("click", function() {
+          if(this.parentNode)  
+            this.parentNode.removeChild(this);
+        });
+      }
+    }
+	</script>
+</body>
+</html>
